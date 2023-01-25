@@ -12,6 +12,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/raj6aeq.css">
+    <link rel="stylesheet" href="https://use.typekit.net/raj6aeq.css">
 </head>
 
 <body>
@@ -20,15 +25,19 @@
 
         <!-- first section: het titelscherm -->
 
-        <section class="titlescreen">
+        <section class="titlescreen" style="background-image: url('/images/homescreenbackground.png'); height: 100vh;">
 
             <article>
-                <h1>Bubbel Kart</h1>
-                <button id="startbutton">Start!</button>
-            </article>
+                <ul>
+                    <li>
+                        <h1>Bubbel Kart</h1>
+                    </li>
 
-            <article>
-                <img src="/images/startscreen.png" alt="Road with our character on it">
+                </ul>
+                <ul>
+                    <li> <button id="startbutton">START!</button>
+                    </li>
+                </ul>
             </article>
 
 
@@ -38,86 +47,287 @@
 
         <section class="introduction">
 
-            <h1>Een introductie</h1>
+            <article>
+                <ul>
+                    <li>
+                        <p>Wist je dat websites, zoekmachines en social media jouw gedrag bijhouden? Hiermee bepalen ze
+                            wat
+                            jij te zien krijgt. Doordat jij bepaalde posts liked, deelt of opnieuw bekijkt zorgt social
+                            media ervoor dat je soortgelijke dingen te zien gaat krijgen.</p>
+                    </li>
+                    <li>
+                        <p>
+                            Aan de ene kant is dit handig, aangezien je dingen ziet die je wilt zien. Aan de andere kant
+                            krijg je hierdoor geen andere meningen en interesses te zien, je blijft in je eigen
+                            ‘bubbel’.
+                        </p>
+                    </li>
+                </ul>
+
+                <ul class="animation">
+                    <li>
+                        <p>Wanneer een filterbubbel ontstaat krijgt groep mensen op social media alleen nog maar dingen
+                            te
+                            zien die bij hun eigen meningen en interesses horen. Dit maakt het soms moeilijk om
+                            een
+                            eigen mening te vormen, social media geeft je telkens een duwtje naar een bepaalde mening,
+                            door
+                            alleen nog maar dat te laten zien. Zo blijf je in de loop van de filterbubbel. Of in dit
+                            geval, de loop van een circuit</p>
+                    </li>
+                    <li>
+                        <img class="loop" src="/images/videos/uitleg.gif" alt="Loop animation">
+                    </li>
+                </ul>
+            </article>
+
+            <button id="challengebutton">Begrepen!</button>
 
         </section>
 
-        <!-- third section: de challenge -->
+        <!-- third section: challenge uitleg -->
+
+        <section class="challenge-uitleg">
+
+            <article>
+
+                <ul>
+                    <h2>Challenge</h2>
+
+                    <li>
+                        <p>Op de volgende pagina vind je een character menu. Hier vind je jouw karakter, die je op basis
+                            van verschillende vragen kunt aanpassen. Wanneer je dit hebt gedaan, kun je een simulatie
+                            bekijken. In deze simulatie kun je zien hoe filterbubbels worden gevormd. Zo kun je bekijken
+                            wat
+                            voor invloed jouw persoonlijke antwoorden hebben op deze simulatie.</p>
+                    </li>
+                    <li>
+                        <p>
+                            Let wel op, alle karakters in de simulatie gedragen zich hetzelfde. Dit hangt dus van jouw
+                            instellingen af.</p>
+                    </li>
+                    <li>
+                        <p>
+                            De challenge aan jullie is om ervoor te zorgen dat de minste filterbubbels gevormd worden.
+                            Weet
+                            jij de juiste combinaties te maken?</p>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li><img src="/images/neutraal.png" alt="Karakter"></li>
+                </ul>
+
+            </article>
+
+            <button id="challenge-uitleg-button">SPEEL!</button>
+
+        </section>
+
+        <!-- fourth section: de challenge -->
 
         <section class="challenge">
-
             <article>
-
-                <h1>Maak jouw eigen karakter!</h1>
-
+                <h2>Maak het karakter!</h2>
+            </article>
+            <article>
                 <form>
+                    <p>Wat is het aantal vrienden?</p>
+                    <div class="questions">
+                        <label class="form-control">
+                            <input type="radio" id="q1o1" name="q1" value="answer1" checked="checked">
+                            Veel (5+)</label>
 
-                    <h2>Hoeveel vrienden heb je?</h2>
+                        <label class="form-control">
+                            <input type="radio" id="q1o2" name="q1" value="answer2">
+                            Weinig (0-5)</label>
+                    </div>
 
-                    <input type="radio" id="q1o1" name="q1" value="answer1" onclick="checkAnswers()" checked="checked">
-                    <label for="q1o1">Veel (5+)</label>
+                    <p>Hoeveel berichten worden er per dag gezien?</p>
+                    <div class="questions">
+                        <label class="form-control">
+                            <input type="radio" id="q2o1" name="q2" value="answer1" checked="checked">
+                            Veel (100+)</label>
 
-                    <input type="radio" id="q1o2" name="q1" value="answer2" onclick="checkAnswers()">
-                    <label for="q1o2">Weinig (0-5)</label>
+                        <label class="form-control"><input type="radio" id="q2o2" name="q2" value="answer2">
+                            Weinig (0-100)</label>
+                    </div>
 
-                    <h2>Hoeveel berichten zie je per dag?</h2>
+                    <p>Worden er veel berichten geliked?</p>
+                    <div class="questions">
+                        <label class="form-control">
+                            <input type="radio" id="q3o1" name="q3" value="answer1" checked="checked">
+                            Ja</label>
 
-                    <input type="radio" id="q2o1" name="q2" value="answer1" onclick="checkAnswers()" checked="checked">
-                    <label for="q2o1">Veel (100+)</label>
+                        <label class="form-control">
+                            <input type="radio" id="q3o2" name="q3" value="answer2">
+                            Nee</label>
+                    </div>
 
-                    <input type="radio" id="q2o2" name="q2" value="answer2" onclick="checkAnswers()">
-                    <label for="q2o2">Weinig (0-100)</label>
+                    <p>Worden er veel berichten gedeeld?</p>
+                    <div class="questions">
+                        <label class="form-control">
+                            <input type="radio" id="q4o1" name="q4" value="answer1" checked="checked">
+                            Ja</label>
 
-                    <h3>Like je veel berichten?</h3>
-
-                    <input type="radio" id="q3o1" name="q3" value="answer1" onclick="checkAnswers()" checked="checked">
-                    <label for="q3o1">Ja</label>
-
-                    <input type="radio" id="q3o2" name="q3" value="answer2" onclick="checkAnswers()">
-                    <label for="q3o2">Nee</label>
-
-                    <h3>Deel je veel berichten?</h3>
-
-                    <input type="radio" id="q4o1" name="q4" value="answer1" onclick="checkAnswers()" checked="checked">
-                    <label for="q4o1">Ja</label>
-
-                    <input type="radio" id="q4o2" name="q4" value="answer2" onclick="checkAnswers()">
-                    <label for="q4o2">Nee</label>
-
+                        <label class="form-control">
+                            <input type="radio" id="q4o2" name="q4" value="answer2">
+                            Nee</label>
+                    </div>
                 </form>
+
+                <img id="myImage" src="/images/1.png">
 
             </article>
 
             <article>
-
-                <img id="myImage" src="/images/1.png" width="400">
-
+                <button id="terug">Terug</button>
+                <button id="verder">Oke!</button>
             </article>
 
         </section>
 
-        <!-- fourth section: de simulatie -->
+        <!-- fifth section: de simulatie -->
 
         <section class="simulatie">
 
+            <article>
+                <video id="simulation">
+                    <source src="/videos/scenario1.mp4" type="video/mp4">
+            </article>
+            <img id="simulation-image" src="" width="1500vw">
+            <button id="startsimulation">Bekijk de resultaten!</button>
         </section>
 
-        <!-- fifth section: de resultaten -->
+        <!-- sixth section: de resultaten + try again -->
 
         <section class="results">
+            <div class="results-bg"
+                style="background-image: url('/images/homescreenbackground.png'); height: 100vh; width: 100vw;">
+            </div>
+
+            <article>
+                <ul>
+                    <li>
+                        <h2 class=" resultatentext">Helaas... je hebt de challenge niet gehaald!</h2>
+                    </li>
+                    <li>
+                        <h3 class="resultatentext2">Er vormen zich nogsteeds filterbubbels.
+                        </h3>
+                    </li>
+                </ul>
+
+
+
+            </article>
+
+            <article>
+                <button id="uitleg">Bekijk de uitleg!</button>
+                <button id="opnieuw">Probeert het opnieuw!</button>
+            </article>
+            <!-- <img src="/images/homescreenbackground.png" alt="Background image"> -->
 
         </section>
 
-        <!-- sixth section: uitleg over filterbubbels -->
+        <!-- seventh section: uitleg over filterbubbels -->
 
         <section class="explanation">
 
-        </section>
+            <article>
+                <ul>
+                    <li>
+                        <p>Je hebt nu gezien hoe de verschillende bubbels zich vormen gebasseerd op de antwoorden die je
+                            op de vragen hebt gegeven. Maar wat gebeurt er eigenlijk?</p>
+                    </li>
+                </ul>
 
-        <!-- seventh section: probeer het nog eens -->
+                <div id="expandabletext1">
+                    <ul class="flexbox">
+                        <li>
+                            <h4>Wat is het aantal vrienden?</h4>
+                        </li>
+                        <li><button class="expand" onclick="expandText('expandabletext1')">v</button></li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <p class="hidden">Wanneer iedereen veel vrienden heeft, worden gedeelde berichten door meer
+                                mensen gezien en kom je sneller bij elkaar.</p>
+                        </li>
+                    </ul>
+                </div>
 
-        <section class="retry">
+                <div id="expandabletext2">
+                    <ul class="flexbox">
+                        <li>
+                            <h4>Hoeveel berichten worden er per dag gezien?</h4>
+                        </li>
+                        <li>
+                            <button class="expand" onclick="expandText('expandabletext2')">v</button>
+                        </li>
+                    </ul>
 
+                    <ul>
+                        <li>
+                            <p class="hidden">Wanneer iedereen veel posts per dag ziet, vormen er een hoop
+                                filterbubbels. Door het zien
+                                van
+                                veel berichten kan social media jou makkelijker in een filterbubbel stoppen. Ze letten
+                                er
+                                bijvoorbeeld op waar je lang naar kijkt, wat je opnieuw bekijkt en of je eventueel een
+                                bericht liked of deelt met vrienden.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="expandabletext3">
+                    <ul class="flexbox">
+                        <li>
+                            <h4>Worden er veel berichten geliked?</h4>
+                        </li>
+                        <li>
+                            <button class="expand" onclick="expandText('expandabletext3')">v</button>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li>
+                            <p class="hidden">Als iemand iets liked, kan het algoritme bepalen welke onderwerpen voor
+                                deze gebruiker
+                                interessant zijn.
+                                Like je veel diverse berichten? dan krijg je veel verschillende onderwerpen te zien en
+                                kom
+                                je minder snel in een bubbel terecht.
+                                Liked iemand heel veel posts met hetzelfde onderwerp? Dan is de kans groter dat diegene
+                                in
+                                een filterbubbel terecht komt.
+                                Liked iemand weinig? Dan is het lastig om iemand in een filterbubbel te plaatsen.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="expandabletext4">
+                    <ul class="flexbox">
+                        <li>
+                            <h4>Worden er veel berichten gedeeld?</h4>
+                        </li>
+                        <li>
+                            <button class="expand" onclick="expandText('expandabletext4')">v</button>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li>
+                            <p class="hidden">Wanneer iedereen veel deelt, komen de mensen die dat bericht hebben
+                                ontvangen al gauw
+                                samen
+                                in een filterbubbel terecht. Dit gebeurt sneller wanneer iemand veel vrienden heeft,
+                                omdat
+                                meer mensen dan het gedeelde bericht te zien krijgen.</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </article>
         </section>
 
     </main>
