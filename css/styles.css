@@ -79,7 +79,7 @@ main {
     overflow: auto;
     scroll-snap-type: y mandatory;
 
-    /* overflow-y: hidden; */
+    overflow-y: hidden;
     overflow-x: hidden;
 }
 
@@ -415,22 +415,15 @@ ul.flexbox {
 button.expand {
     font-size: 1em;
 
-
     border-radius: 10px;
-    box-shadow: -5px -5px 0 var(--black);
 }
 
 .hidden {
     display: none;
-    /* height: 0;
-    padding: 0;
-    transition: all 1s ease-in-out; */
 }
 
 .visible {
     display: block;
-    /* height: auto;
-    transition: all 1s ease-in-out; */
 }
 
 /* buttons */

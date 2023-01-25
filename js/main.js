@@ -47,6 +47,12 @@ document.getElementById("uitleg").addEventListener("click", function() {
     document.querySelector(".explanation").scrollIntoView({ behavior: "smooth"});
 });
 
+/* seventh page go to explanation button */
+
+document.getElementById("nogeens").addEventListener("click", function() {
+    document.querySelector(".challenge").scrollIntoView({ behavior: "smooth"});
+});
+
 
 /* form */
 
@@ -67,6 +73,8 @@ function checkAnswers() {
     switch (question1 + question2 + question3 + question4) {
         case 'answer1answer1answer1answer1':
             image = "/images/1.png";
+            document.querySelector("#simulation-image").src=""
+            document.querySelector("#simulation").style.display = "block"
             video.src= "/videos/scenario1.mp4";
             document.querySelector(".resultatentext").innerHTML = "Helaas... je hebt de challenge niet gehaald!";
             document.querySelector(".resultatentext2").innerHTML = "Er vormen zich nogsteeds filterbubbels.";
@@ -138,6 +146,7 @@ function checkAnswers() {
         case 'answer1answer1answer1answer2':
             image = "/images/11.png";
             video.src= "/videos/scenario3.mp4";
+            document.querySelector("#simulation-image").src=""
             document.querySelector("#simulation").style.display = "block"
             document.querySelector(".resultatentext").innerHTML = "Helaas... je hebt de challenge niet gehaald!";
             document.querySelector(".resultatentext2").innerHTML = "Er vormen zich nogsteeds filterbubbels.";
@@ -208,23 +217,21 @@ video.addEventListener("ended", function() {
 
 /* creating expandable text */
 
+// var to keep track of which expandable text is currently open
+
+let currentOpenText = null;
+
 function expandText(expandableId) {
     const expandableText = document.getElementById(expandableId);
-    expandableText.getElementsByClassName("hidden")
-    [0].classList.toggle("visible");
+    const hiddenText = expandableText.getElementsByClassName("hidden")[0];
+
+    if (currentOpenText && currentOpenText !== expandableId) {
+        document.getElementById(currentOpenText)
+        .getElementsByClassName("hidden")[0]
+        .classList.remove("visible");
+    }
+
+    currentOpenText = expandableId;
+
+    hiddenText.classList.toggle("visible");
 }
-
-const expandableText = document.querySelector("p.hidden");
-const expandButton = document.getElementsByClassName("expand");
-
-expandButton.forEach(button => {
-    button.addEventListener("click", function() {
-        expandableText.forEach(text => {
-            text.classList.remove("visible");
-        });
-
-        const expandableText = expandButton.nextElementSibling;
-
-            expandableText.classList.toggle("visible")
-    })
-})
