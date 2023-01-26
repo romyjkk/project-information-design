@@ -154,6 +154,7 @@ function checkAnswers() {
         case 'answer2answer1answer2answer2':
             image = "/images/12.png";
             video.src= "/videos/scenario4.mp4";
+            document.querySelector("#simulation-image").src=""
             document.querySelector("#simulation").style.display = "block"
             document.querySelector(".resultatentext").innerHTML = "Je hebt het bijna gehaald!";
             document.querySelector(".resultatentext2").innerHTML = "Je kunt voor nog minder filterbubbels zorgen!";
